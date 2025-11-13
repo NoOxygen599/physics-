@@ -46,9 +46,9 @@ void makeTopPlatform() {
 
   //plot the vertices of this platform
   topPlatform.vertex(-100, 60);
-  topPlatform.vertex(640, 240);
-  topPlatform.vertex(640, 340);
-  topPlatform.vertex(-100, 160);
+  topPlatform.vertex(440, 60);
+  topPlatform.vertex(440, 140);
+  topPlatform.vertex(-100, 140);
 
   // define properties
   topPlatform.setStatic(true);
@@ -65,11 +65,19 @@ void makeBottomPlatform() {
   bottomPlatform = new FPoly();
 
   //plot the vertices of this platform
-  bottomPlatform.vertex(900, 360);
-  bottomPlatform.vertex(300, 480);
-  bottomPlatform.vertex(400, 580);
-  bottomPlatform.vertex(300, 580);
-  bottomPlatform.vertex(900, 460);
+  bottomPlatform.vertex(210, 260);
+  bottomPlatform.vertex(200, 260);
+  bottomPlatform.vertex(210, 460);
+  bottomPlatform.vertex(220, 460);
+  
+
+  bottomPlatform.vertex(520, 460);
+  bottomPlatform.vertex(530, 260);
+  bottomPlatform.vertex(520, 260);
+  bottomPlatform.vertex(510, 450);
+  bottomPlatform.vertex(220, 450);
+  
+  
 
   // define properties
   bottomPlatform.setStatic(true);
