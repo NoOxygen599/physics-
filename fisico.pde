@@ -9,6 +9,7 @@ color yellow = color(242, 215, 16);
 
 //assets
 PImage redBird;
+PImage slime;
 
 FPoly topPlatform; 
 FPoly bottomPlatform;
@@ -22,6 +23,7 @@ void setup() {
   
   //load resources
   redBird = loadImage("red-bird.png");
+  slime   = loadImage("slime.webp");
 
   //initialise world
   makeWorld();
@@ -96,8 +98,8 @@ void draw() {
   background(blue);
 
   if (frameCount % 50 == 0) {  //Every 20 frames ...
-    makeCircle();
-    makeBlob();
+   // makeCircle();
+   // makeBlob();
     makeBox();
     makeBird();
   }
@@ -149,18 +151,23 @@ void makeBlob() {
 //===========================================================================================
 
 void makeBox() {
-  FBox box = new FBox(25, 100);
+  FBox box = new FBox(50, 50);
   box.setPosition(random(100,width-100), -5);
+
+ 
 
   //set visuals
   box.setStroke(0);
   box.setStrokeWeight(2);
   box.setFillColor(green);
-
+ 
   //set physical properties
   box.setDensity(0.2);
   box.setFriction(1);
-  box.setRestitution(0.25);
+  box.setRestitution(1.5);
+  
+  box.attachImage(slime);
+ 
   world.add(box);
 }
 
