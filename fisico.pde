@@ -36,7 +36,7 @@ void setup() {
 void makeWorld() {
   Fisica.init(this);
   world = new FWorld();
-  world.setGravity(0, 900);
+  world.setGravity(0, 981);
 }
 
 //===========================================================================================
@@ -45,10 +45,10 @@ void makeTopPlatform() {
   topPlatform = new FPoly();
 
   //plot the vertices of this platform
-  topPlatform.vertex(-100, 60);
-  topPlatform.vertex(440, 60);
-  topPlatform.vertex(440, 140);
-  topPlatform.vertex(-100, 140);
+  topPlatform.vertex(-100, 160);
+  topPlatform.vertex(300, 260);
+  topPlatform.vertex(300, 340);
+  topPlatform.vertex(-100, 240);
 
   // define properties
   topPlatform.setStatic(true);
@@ -65,17 +65,17 @@ void makeBottomPlatform() {
   bottomPlatform = new FPoly();
 
   //plot the vertices of this platform
-  bottomPlatform.vertex(210, 260);
-  bottomPlatform.vertex(200, 260);
-  bottomPlatform.vertex(210, 460);
-  bottomPlatform.vertex(220, 460);
+  bottomPlatform.vertex(310, 360);
+  bottomPlatform.vertex(300, 360);
+  bottomPlatform.vertex(310, 560);
+  bottomPlatform.vertex(320, 560);
   
 
-  bottomPlatform.vertex(520, 460);
-  bottomPlatform.vertex(530, 260);
-  bottomPlatform.vertex(520, 260);
-  bottomPlatform.vertex(510, 450);
-  bottomPlatform.vertex(220, 450);
+  bottomPlatform.vertex(620, 560);
+  bottomPlatform.vertex(630, 360);
+  bottomPlatform.vertex(620, 360);
+  bottomPlatform.vertex(610, 550);
+  bottomPlatform.vertex(320, 550);
   
   
 
