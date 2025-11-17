@@ -23,8 +23,8 @@ void setup() {
   
   //load resources
   redBird = loadImage("red-bird.png");
-  slime   = loadImage("slime.webp");
-
+  slime   = loadImage("slime.jpeg");
+  slime.resize(50, 50);
   //initialise world
   makeWorld();
 
@@ -151,24 +151,26 @@ void makeBlob() {
 //===========================================================================================
 
 void makeBox() {
-  FBox box = new FBox(50, 50);
-  box.setPosition(random(100,width-100), -5);
+  FBox Box = new FBox(50, 50);
+  Box.setPosition(random(100,width-100), -5);
 
  
 
   //set visuals
-  box.setStroke(0);
-  box.setStrokeWeight(2);
-  box.setFillColor(green);
+  Box.setStroke(0);
+  Box.setStrokeWeight(2);
+  Box.setFillColor(green);
  
   //set physical properties
-  box.setDensity(0.2);
-  box.setFriction(1);
-  box.setRestitution(1.5);
+  Box.setDensity(0.2);
+  Box.setFriction(1);
+  Box.setRestitution(1.1);
   
-  box.attachImage(slime);
+  
+ Box.attachImage(slime);
  
-  world.add(box);
+ 
+  world.add(Box);
 }
 
 //===========================================================================================
