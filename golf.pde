@@ -6,6 +6,7 @@ color brown  = color(166, 120, 24);
 color green  = color(74, 163, 57);
 color red    = color(224, 80, 61);
 color yellow = color(242, 215, 16);
+color golf   = #84CB97;
 
 //assets
 PImage redBird;
@@ -17,11 +18,16 @@ FPoly bottomPlatform;
 //fisica
 FWorld world;
 
+
+//variables
+boolean set;
 void setup() {
   //make window
   size(1000, 700);
   
   //load resources
+set = false;
+ 
  
   //initialise world
   makeWorld();
@@ -53,11 +59,28 @@ void makeTopPlatform() {
   topPlatform.vertex(105, 265);
   topPlatform.vertex(120, 300);
   topPlatform.vertex(160, 350);
+  topPlatform.vertex(170, 550);
+  topPlatform.vertex(270, 630);
+  topPlatform.vertex(460, 680);
+  topPlatform.vertex(570, 630);
+  topPlatform.vertex(600, 600);
+  topPlatform.vertex(620, 500);
+  topPlatform.vertex(670, 510);
+  topPlatform.vertex(750, 510);
+  topPlatform.vertex(800, 530);
+  topPlatform.vertex(800, 560);
+  topPlatform.vertex(830, 560);
+  topPlatform.vertex(830, 530);
+  topPlatform.vertex(880, 510);
+  topPlatform.vertex(940, 500);
+  topPlatform.vertex(1000, 530);
+  topPlatform.vertex(width, height);
+  topPlatform.vertex(width/2, height);
   topPlatform.vertex(0, height);
 
   // define properties
   topPlatform.setStatic(true);
-  topPlatform.setFillColor(brown);
+  topPlatform.setFillColor(golf);
   topPlatform.setFriction(0.1);
 
   //put it in the world
@@ -179,8 +202,8 @@ void makeBox() {
 //===========================================================================================
 
 void makeBird() {
-  FCircle bird = new FCircle(48);
-  bird.setPosition(random(100,width-100), -5);
+  FCircle bird = new FCircle(20);
+  bird.setPosition(90, 250);
 
   //set visuals
   
@@ -188,6 +211,7 @@ void makeBird() {
   //set physical properties
   bird.setDensity(0.8);
   bird.setFriction(1);
+  bird.setStatic(set); 
   bird.setRestitution(0.5);
   world.add(bird);
 }
