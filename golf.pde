@@ -31,7 +31,7 @@ set = false;
  
   //initialise world
   makeWorld();
-  makeBird();
+  makeGball();
   //add terrain to world
   makeTopPlatform();
   makeBottomPlatform();
@@ -201,17 +201,24 @@ void makeBox() {
 
 //===========================================================================================
 
-void makeBird() {
-  FCircle bird = new FCircle(20);
-  bird.setPosition(90, 250);
+void makeGball() {
+  FCircle Gball = new FCircle(20);
+  Gball.setPosition(90, 250);
 
   //set visuals
   
-
+  
   //set physical properties
-  bird.setDensity(0.8);
-  bird.setFriction(1);
-  bird.setStatic(set); 
-  bird.setRestitution(0.5);
-  world.add(bird);
+  Gball.setDensity(0.8);
+  Gball.setFriction(1);
+  Gball.setStatic(set); 
+  Gball.setRestitution(0.5);
+  world.add(Gball);
+  
+  
+  //properties
+  if (Gball.Position < 0)      { Gball.x = 90; Gball.y = 250;}
+  if (Gball.y < 0)      { Gball.x = 90; Gball.y = 250; }
+  if (Gball.x > width)  { Gball.x = 90; Gball.y = 250; }
+  if (Gball.x > height) { Gball.x = 90; Gball.y = 250; }
 }
